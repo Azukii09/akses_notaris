@@ -1,1 +1,0 @@
-# akses_notaris
