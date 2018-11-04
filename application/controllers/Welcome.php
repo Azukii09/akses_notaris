@@ -2,24 +2,74 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
+	public function __construct() {
+		parent::__construct();
+		$this->load->library('template');
+		$this->load->database();
+		$this->load->helper(array('array', 'language', 'url'));
+		$this->load->model(array('menu_u'));
+	}
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+
+		/* Load config*/
+		$this->load->config('admin/dp_config');
+		$this->load->config('common/dp_config');
+
+		/* load data */
+		$this->data['title']               = $this->config->item('title');
+		$this->data['title_lg']            = $this->config->item('title_lg');
+		$this->data['menu'] 							 = $this->menu_u->tampil_menu();
+
+		$this->template->coba_render('template/konten', $this->data);
+
+	}
+	public function dashboard()
+	{
+
+		/* Load config*/
+		$this->load->config('admin/dp_config');
+		$this->load->config('common/dp_config');
+
+		/* load data */
+		$this->data['title']               = $this->config->item('title');
+		$this->data['title_lg']            = $this->config->item('title_lg');
+		$this->data['menu'] 							 = $this->menu_u->tampil_menu();
+
+		$this->template->coba_render('bank/dashboard', $this->data);
+
+	}
+	public function order()
+	{
+
+		/* Load config*/
+		$this->load->config('admin/dp_config');
+		$this->load->config('common/dp_config');
+
+		/* load data */
+		$this->data['title']               = $this->config->item('title');
+		$this->data['title_lg']            = $this->config->item('title_lg');
+		$this->data['menu'] 							 = $this->menu_u->tampil_menu();
+
+		$this->template->coba_render('bank/order', $this->data);
+
+	}
+
+	public function ordercomplete()
+	{
+
+		/* Load config*/
+		$this->load->config('admin/dp_config');
+		$this->load->config('common/dp_config');
+
+		/* load data */
+		$this->data['title']               = $this->config->item('title');
+		$this->data['title_lg']            = $this->config->item('title_lg');
+		$this->data['menu'] 							 = $this->menu_u->tampil_menu();
+		$this->data['uri_sub']						 = 'ordercomplete';
+
+		$this->template->coba_render('bank/report/report', $this->data);
+
 	}
 }
