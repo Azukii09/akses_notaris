@@ -5,10 +5,15 @@
       Dashboard
       <small>Control panel</small>
     </h1>
+    <?php foreach ($menu as $menus) {
+      if ($this->uri->segment('1')==$menus->url_menu) {
+    ?>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="<?php echo $menus->url_menu; ?>"><i class="fa <?php echo $menus->icon_menu; ?>"></i> <?php echo $menus->nama_menu; ?></a></li>
       <li class="active">Dashboard</li>
     </ol>
+  <?php }
+}?>
   </section>
 
   <!-- Main content -->

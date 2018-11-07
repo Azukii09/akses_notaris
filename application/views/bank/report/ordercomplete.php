@@ -8,13 +8,16 @@
         Blank page
         <small>it all starts here</small>
       </h1>
+      <?php foreach ($menu as $menus) {
+        if ($this->uri->segment('1')==$menus->url_menu) {
+      ?>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Blank page</li>
+        <li><i class="fa <?php echo $menus->icon_menu; ?>"></i> <?php echo $menus->nama_menu; ?></li>
+        <li class="active">Order Complete</li>
       </ol>
-    </section>
-
+    <?php
+    }
+   } ?>
     <!-- Main content -->
     <section class="content">
 

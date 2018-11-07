@@ -25,7 +25,7 @@
       // menentukan menu ada label angkanya atau tidak (if pertama)
       if ($menus->jenis_menu==1) {
               // menentukan menu aktif atau tidak (if pertama)
-              if ($this->uri->segment('2')==$menus->url_menu) {
+              if ($this->uri->segment('1')==$menus->url_menu) {
 
                 // menentukan ada sub menu atau tidak (if pertama)
                 $a = $menus->id_menu;
@@ -33,7 +33,7 @@
                 if ($menus->jenis_sub==1) {
                   ?>
                   <li class="active treeview">
-                    <a href="<?php echo site_url('welcome/'.$menus->url_menu); ?>">
+                    <a href="#">
                       <i class="fa <?php echo $menus->icon_menu; ?>"></i>
                       <span><?php echo $menus->nama_menu; ?></span>
                       <span class="pull-right-container">
@@ -44,13 +44,13 @@
                       <?php // memanggil data menu
                       foreach ($submenu->result() as $submenus) {
                       if ($this->uri->segment('2')==$submenus->url_sub_menu) {?>
-                      <li class="active"><a href="<?php echo site_url('welcome/'.$submenus->url_sub_menu); ?>">
+                      <li class="active"><a href="<?php echo site_url($menus->url_menu.'/'.$submenus->url_sub_menu); ?>">
                         <i class="fa <?php echo $submenus->icon_sub_menu; ?>"></i> <?php echo $submenus->nama_sub_menu; ?></a>
                       </li>
                       <?php
                       }else{
                       ?>
-                      <li><a href="<?php echo site_url('welcome/'.$submenus->url_sub_menu); ?>">
+                      <li><a href="<?php echo site_url($menus->url_menu.'/'.$submenus->url_sub_menu); ?>">
                         <i class="fa <?php echo $submenus->icon_sub_menu; ?>"></i> <?php echo $submenus->nama_sub_menu; ?></a>
                       </li>
                       <?php
@@ -66,7 +66,7 @@
                 // akhir menentukan sub menu (if pertama)
                 else {?>
                   <li class="active">
-                    <a href="<?php echo site_url('welcome/'.$menus->url_menu); ?>">
+                    <a href="<?php echo site_url($menus->url_menu.'/'.$menus->url_menu); ?>">
                       <i class="fa <?php echo $menus->icon_menu; ?>"></i>
                       <span><?php echo $menus->nama_menu; ?></span>
                       <span class="pull-right-container">
@@ -86,7 +86,7 @@
                 if ($menus->jenis_sub==1) {
               ?>
               <li class="treeview">
-                <a href="<?php echo site_url('welcome/'.$menus->url_menu); ?>">
+                <a href="#">
                   <i class="fa <?php echo $menus->icon_menu; ?>"></i>
                   <span><?php echo $menus->nama_menu; ?></span>
                   <span class="pull-right-container">
@@ -96,13 +96,13 @@
                 <ul class="treeview-menu">
                   <?php // memanggil data menu
                   foreach ($submenu->result() as $submenus) {if ($this->uri->segment('2')==$submenus->url_sub_menu) {?>
-                  <li class="active"><a href="<?php echo site_url('welcome/'.$submenus->url_sub_menu); ?>">
+                  <li class="active"><a href="<?php echo site_url($menus->url_menu.'/'.$submenus->url_sub_menu); ?>">
                     <i class="fa <?php echo $submenus->icon_sub_menu; ?>"></i> <?php echo $submenus->nama_sub_menu; ?></a>
                   </li>
                   <?php
                   }else{
                   ?>
-                  <li><a href="<?php echo site_url('welcome/'.$submenus->url_sub_menu); ?>">
+                  <li><a href="<?php echo site_url($menus->url_menu.'/'.$submenus->url_sub_menu); ?>">
                     <i class="fa <?php echo $submenus->icon_sub_menu; ?>"></i> <?php echo $submenus->nama_sub_menu; ?></a>
                   </li>
                   <?php
@@ -116,7 +116,7 @@
             }
             else {?>
               <li >
-                <a href="<?php echo site_url('welcome/'.$menus->url_menu); ?>">
+                <a href="<?php echo site_url($menus->url_menu.'/'.$menus->url_menu); ?>">
                   <i class="fa <?php echo $menus->icon_menu; ?>"></i>
                   <span><?php echo $menus->nama_menu; ?></span>
                   <span class="pull-right-container">
@@ -138,7 +138,7 @@
       // menentukan menu ada label angkanya atau tidak (else pertama)
       else {
         // menentukan menu aktif atau tidak (if kedua)
-        if ($this->uri->segment('2')==$menus->url_menu) {
+        if ($this->uri->segment('1')==$menus->url_menu) {
 
           // menentukan ada sub menu atau tidak (else ketiga)
           $a = $menus->id_menu;
@@ -146,20 +146,21 @@
           if ($menus->jenis_sub==1) {
           ?>
             <li class="active treeview">
-              <a href="<?php echo site_url('welcome/'.$menus->url_menu); ?>">
+              <a href="#">
                 <i class="fa <?php echo $menus->icon_menu; ?>"></i>
                 <span><?php echo $menus->nama_menu; ?></span>
               </a>
               <ul class="treeview-menu">
                 <?php // memanggil data menu
-                foreach ($submenu->result() as $submenus) {if ($this->uri->segment('2')==$submenus->url_sub_menu) {?>
-                <li class="active"><a href="<?php echo site_url('welcome/'.$submenus->url_sub_menu); ?>">
+                foreach ($submenu->result() as $submenus) {
+                if ($this->uri->segment('2')==$submenus->url_sub_menu) {?>
+                <li class="active"><a href="<?php echo site_url($menus->url_menu.'/'.$submenus->url_sub_menu); ?>">
                   <i class="fa <?php echo $submenus->icon_sub_menu; ?>"></i> <?php echo $submenus->nama_sub_menu; ?></a>
                 </li>
                 <?php
                 }else{
                 ?>
-                <li><a href="<?php echo site_url('welcome/'.$submenus->url_sub_menu); ?>">
+                <li><a href="<?php echo site_url($menus->url_menu.'/'.$submenus->url_sub_menu); ?>">
                   <i class="fa <?php echo $submenus->icon_sub_menu; ?>"></i> <?php echo $submenus->nama_sub_menu; ?></a>
                 </li>
                 <?php
@@ -173,7 +174,7 @@
               }
               else {?>
                 <li class="active">
-                  <a href="<?php echo site_url('welcome/'.$menus->url_menu); ?>">
+                  <a href="<?php echo site_url($menus->url_menu.'/'.$menus->url_menu); ?>">
                     <i class="fa <?php echo $menus->icon_menu; ?>"></i>
                     <span><?php echo $menus->nama_menu; ?></span>
                   </a>
@@ -193,7 +194,7 @@
           if ($menus->jenis_sub==1) {
           ?>
           <li>
-            <a href="<?php echo site_url('welcome/'.$menus->url_menu); ?>">
+            <a href="#">
               <i class="fa <?php echo $menus->icon_menu; ?>"></i>
               <span><?php echo $menus->nama_menu; ?></span>
             </a>
@@ -201,13 +202,13 @@
           <ul class="treeview-menu">
             <?php // memanggil data menu
             foreach ($submenu->result() as $submenus) {if ($this->uri->segment('2')==$submenus->url_sub_menu) {?>
-            <li class="active"><a href="<?php echo site_url('welcome/'.$submenus->url_sub_menu); ?>">
+            <li class="active"><a href="<?php echo site_url($menus->url_menu.'/'.$submenus->url_sub_menu); ?>">
               <i class="fa <?php echo $submenus->icon_sub_menu; ?>"></i> <?php echo $submenus->nama_sub_menu; ?></a>
             </li>
             <?php
             }else{
             ?>
-            <li><a href="<?php echo site_url('welcome/'.$submenus->url_sub_menu); ?>">
+            <li><a href="<?php echo site_url($menus->url_menu.'/'.$submenus->url_sub_menu); ?>">
               <i class="fa <?php echo $submenus->icon_sub_menu; ?>"></i> <?php echo $submenus->nama_sub_menu; ?></a>
             </li>
             <?php
@@ -220,7 +221,7 @@
             }
             else {?>
               <li >
-                <a href="<?php echo site_url('welcome/'.$menus->url_menu); ?>">
+                <a href="<?php echo site_url($menus->url_menu.'/'.$menus->url_menu); ?>">
                   <i class="fa <?php echo $menus->icon_menu; ?>"></i>
                   <span><?php echo $menus->nama_menu; ?></span>
                 </a>
