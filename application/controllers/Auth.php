@@ -92,7 +92,7 @@ class Auth extends CI_Controller
 													}
 													else
 													{
-															redirect(base_url('dashboard'));
+															redirect(base_url('dashboard/dashboard'));
 													}
 											}
 											else
@@ -138,7 +138,7 @@ class Auth extends CI_Controller
 													}
 													else
 													{
-															redirect(base_url('dashboard'));
+															redirect(base_url('dashboard/dashboard'));
 													}
 							}
 					}

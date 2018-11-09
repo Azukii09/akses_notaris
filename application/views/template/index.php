@@ -28,6 +28,9 @@
 </div>
 
 <?php $this->load->view('template/Scriptshiet'); ?>
+<?php if ($script!=NULL): ?>
+  <?php $this->load->view($script); ?>
+<?php endif; ?>
 
 </body>
 </html>

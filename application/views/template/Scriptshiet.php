@@ -41,9 +41,7 @@
 <script src="<?php echo base_url('assets/template/AdminLTE/')?>bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="<?php echo base_url('assets/template/AdminLTE/')?>bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 
-<script>
-  $(function () {
-    $('#example1').DataTable()
 
-  })
-</script>
+<!-- JS untuk tombol modal-->
+
+<!-- JS untuk tombol modal-->

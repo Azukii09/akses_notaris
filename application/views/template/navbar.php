@@ -1,6 +1,6 @@
 <header class="main-header">
   <!-- Logo -->
-  <a href="<?php echo base_url(); ?>" class="logo">
+  <a href="<?php echo site_url('dashboard/dashboard'); ?>" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>A</b>LT</span>
     <!-- logo for regular state and mobile devices -->
@@ -230,20 +230,7 @@
               </p>
             </li>
             <!-- Menu Body -->
-            <li class="user-body">
-              <div class="row">
-                <div class="col-xs-4 text-center">
-                  <a href="#">Followers</a>
-                </div>
-                <div class="col-xs-4 text-center">
-                  <a href="#">Sales</a>
-                </div>
-                <div class="col-xs-4 text-center">
-                  <a href="#">Friends</a>
-                </div>
-              </div>
-              <!-- /.row -->
-            </li>
+            
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">

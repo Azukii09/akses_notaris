@@ -7,7 +7,7 @@ class Dashboard extends CI_Controller {
 		$this->load->library('template');
 		$this->load->database();
 		$this->load->helper(array('array', 'language', 'url'));
-		$this->load->model(array('menu_u'));
+		$this->load->model(array('menu_u','prefs_model','order_model'));
 	}
 
 	public function index()
@@ -22,7 +22,7 @@ class Dashboard extends CI_Controller {
 		$this->data['title_lg']            = $this->config->item('title_lg');
 		$this->data['menu'] 							 = $this->menu_u->tampil_menu();
 
-		$this->template->coba_render('template/konten', $this->data);
+		$this->template->coba_render('bank/dashboard/dashboard', $this->data);
 
 	}
 	public function dashboard()
@@ -37,39 +37,7 @@ class Dashboard extends CI_Controller {
 		$this->data['title_lg']            = $this->config->item('title_lg');
 		$this->data['menu'] 							 = $this->menu_u->tampil_menu();
 
-		$this->template->coba_render('bank/dashboard', $this->data);
-
-	}
-	public function order()
-	{
-
-		/* Load config*/
-		$this->load->config('admin/dp_config');
-		$this->load->config('common/dp_config');
-
-		/* load data */
-		$this->data['title']               = $this->config->item('title');
-		$this->data['title_lg']            = $this->config->item('title_lg');
-		$this->data['menu'] 							 = $this->menu_u->tampil_menu();
-
-		$this->template->coba_render('bank/order', $this->data);
-
-	}
-
-	public function ordercomplete()
-	{
-
-		/* Load config*/
-		$this->load->config('admin/dp_config');
-		$this->load->config('common/dp_config');
-
-		/* load data */
-		$this->data['title']               = $this->config->item('title');
-		$this->data['title_lg']            = $this->config->item('title_lg');
-		$this->data['menu'] 							 = $this->menu_u->tampil_menu();
-		$this->data['uri_sub']						 = 'ordercomplete';
-
-		$this->template->coba_render('bank/report/report', $this->data);
+		$this->template->coba_render('bank/dashboard/dashboard', $this->data);
 
 	}
 }

@@ -37,7 +37,34 @@
                       <i class="fa <?php echo $menus->icon_menu; ?>"></i>
                       <span><?php echo $menus->nama_menu; ?></span>
                       <span class="pull-right-container">
-                        <span class="label label-primary pull-right">4</span>
+
+                        <!-- penulisan label angka job -->
+                        <?php if ($menus->nama_menu=='Order') {?>
+                        <span class="label label-primary pull-right">
+                          <?php
+                            $jumlah= $this->order_model->hitung_data_order_req('STATUS_PESAN','STATUS_PESAN="delivered" or STATUS_PESAN="read"');
+                            echo $jumlah;
+                          ?>
+                        </span>
+                      <?php }
+                      else if ($menus->nama_menu=='Monitoring') {?>
+                      <span class="label label-warning pull-right">
+                        <?php
+                          $jumlah= $this->order_model->hitung_data_order_req('STATUS_PESAN','STATUS_PESAN="progres"');
+                          echo $jumlah;
+                        ?>
+                      </span>
+                    <?php }
+                    else if ($menus->nama_menu=='Report') {?>
+                    <span class="label bg-purple pull-right">
+                      <?php
+                        $jumlah= $this->order_model->hitung_data_order_rep('STATUS_PESAN');
+                        echo $jumlah;
+                      ?>
+                    </span>
+                  <?php } ?>
+                      <!-- /penulisan label angka job -->
+
                       </span>
                     </a>
                     <ul class="treeview-menu">
@@ -70,7 +97,34 @@
                       <i class="fa <?php echo $menus->icon_menu; ?>"></i>
                       <span><?php echo $menus->nama_menu; ?></span>
                       <span class="pull-right-container">
-                        <span class="label label-primary pull-right">4</span>
+
+                        <!-- penulisan label angka job -->
+                        <?php if ($menus->nama_menu=='Order') {?>
+                          <span class="label label-primary pull-right">
+                            <?php
+                              $jumlah= $this->order_model->hitung_data_order_req('STATUS_PESAN','STATUS_PESAN="delivered" or STATUS_PESAN="read"');
+                              echo $jumlah;
+                            ?>
+                          </span>
+                        <?php }
+                        else if ($menus->nama_menu=='Monitoring') {?>
+                        <span class="label label-warning pull-right">
+                          <?php
+                            $jumlah= $this->order_model->hitung_data_order_req('STATUS_PESAN','STATUS_PESAN="progres"');
+                            echo $jumlah;
+                          ?>
+                        </span>
+                      <?php }
+                      else if ($menus->nama_menu=='Report') {?>
+                      <span class="label bg-purple pull-right">
+                        <?php
+                          $jumlah= $this->order_model->hitung_data_order_rep('STATUS_PESAN');
+                          echo $jumlah;
+                        ?>
+                      </span>
+                    <?php } ?>
+                        <!-- /penulisan label angka job -->
+
                       </span>
                     </a>
                   </li>
@@ -90,7 +144,34 @@
                   <i class="fa <?php echo $menus->icon_menu; ?>"></i>
                   <span><?php echo $menus->nama_menu; ?></span>
                   <span class="pull-right-container">
-                    <span class="label label-primary pull-right">4</span>
+
+                    <!-- penulisan label angka job -->
+                    <?php if ($menus->nama_menu=='Order') {?>
+                        <span class="label label-primary pull-right">
+                          <?php
+                            $jumlah= $this->order_model->hitung_data_order_req('STATUS_PESAN','STATUS_PESAN="delivered" or STATUS_PESAN="read"');
+                            echo $jumlah;
+                          ?>
+                        </span>
+                      <?php }
+                      else if ($menus->nama_menu=='Monitoring') {?>
+                      <span class="label label-warning pull-right">
+                        <?php
+                          $jumlah= $this->order_model->hitung_data_order_req('STATUS_PESAN','STATUS_PESAN="progres"');
+                          echo $jumlah;
+                        ?>
+                      </span>
+                    <?php }
+                    else if ($menus->nama_menu=='Report') {?>
+                    <span class="label bg-purple pull-right">
+                      <?php
+                        $jumlah= $this->order_model->hitung_data_order_rep('STATUS_PESAN');
+                        echo $jumlah;
+                      ?>
+                    </span>
+                  <?php } ?>
+                      <!-- /penulisan label angka job -->
+
                   </span>
                 </a>
                 <ul class="treeview-menu">
@@ -120,7 +201,34 @@
                   <i class="fa <?php echo $menus->icon_menu; ?>"></i>
                   <span><?php echo $menus->nama_menu; ?></span>
                   <span class="pull-right-container">
-                    <span class="label label-primary pull-right">4</span>
+
+                    <!-- penulisan label angka job -->
+                    <?php if ($menus->nama_menu=='Order') {?>
+                      <span class="label label-primary pull-right">
+                        <?php
+                          $jumlah= $this->order_model->hitung_data_order_req('STATUS_PESAN','STATUS_PESAN="delivered" or STATUS_PESAN="read"');
+                          echo $jumlah;
+                        ?>
+                      </span>
+                    <?php }
+                    else if ($menus->nama_menu=='Monitoring') {?>
+                    <span class="label label-warning pull-right">
+                      <?php
+                        $jumlah= $this->order_model->hitung_data_order_req('STATUS_PESAN','STATUS_PESAN="progres"');
+                        echo $jumlah;
+                      ?>
+                    </span>
+                  <?php }
+                  else if ($menus->nama_menu=='Report') {?>
+                  <span class="label bg-purple pull-right">
+                    <?php
+                      $jumlah= $this->order_model->hitung_data_order_rep('STATUS_PESAN');
+                      echo $jumlah;
+                    ?>
+                  </span>
+                <?php } ?>
+                    <!-- /penulisan label angka job -->
+
                   </span>
                 </a>
               </li>
@@ -193,12 +301,12 @@
           $submenu = $this->db->query("SELECT * FROM sub_menu WHERE id_menu = '$a' ");
           if ($menus->jenis_sub==1) {
           ?>
-          <li>
+          <li class="treeview">
             <a href="#">
               <i class="fa <?php echo $menus->icon_menu; ?>"></i>
               <span><?php echo $menus->nama_menu; ?></span>
             </a>
-          </li>
+
           <ul class="treeview-menu">
             <?php // memanggil data menu
             foreach ($submenu->result() as $submenus) {if ($this->uri->segment('2')==$submenus->url_sub_menu) {?>
@@ -217,6 +325,7 @@
             // akhir dari memanggil sub menu
             ?>
           </ul>
+          </li>
         <?php
             }
             else {?>
@@ -235,34 +344,7 @@
     }
     // akhir dari memanggil data menu
     ?>
-    <!--
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-files-o"></i>
-          <span>Layout Options</span>
-          <span class="pull-right-container">
-            <span class="label label-primary pull-right">4</span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="pages/widgets.html">
-          <i class="fa fa-th"></i> <span>Widgets</span>
-          <span class="pull-right-container">
-            <small class="label pull-right bg-green">new</small>
-          </span>
-        </a>
-      </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-pie-chart"></i>
-          <span>Charts</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-      </li>
-    -->
+
     </ul>
   </section>
   <!-- /.sidebar -->
