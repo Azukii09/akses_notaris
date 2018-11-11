@@ -3,7 +3,10 @@
 <!-- *header -->
 <?php $this->load->view('template/header'); ?>
 <!-- */header -->
-
+<?php if ($link!=NULL): ?>
+  <?php $this->load->view($link); ?>
+<?php endif; ?>
+</head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
