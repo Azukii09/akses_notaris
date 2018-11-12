@@ -39,7 +39,7 @@
         </div>
 
         <div class="box-body">
-          
+
         </div>
 
         <div class="box-body">
@@ -51,7 +51,7 @@
                           <th>Deadline</th>
                           <th>Hari</th>
                           <th>Status</th>
-                          <th>Aksi</th>
+                          <th style="text-align: center;">Aksi</th>
                         </tr>
                         <?php foreach ($data_agunan as $row_ag){
                           if ($row1->STATUS_PESAN=='progres' && $row1->ID_REQUEST == $row_ag->ID_REQUEST) {
@@ -76,7 +76,11 @@
                               <p class="label label-success"><?php echo $row->STATUS_AKTA; ?></p>
                             <?php }?>
                           </td>
-                          <td style="text-align: center;"><input class="btn btn-primary" type="submit" value="Edit">&ensp;<input class="btn btn-danger" type="submit" value="Hapus"></td>
+                          <td style="text-align: center;">
+                            <button type="button" class="btn bg-olive" data-toggle="tooltip" data-placement="top" title="Detail">
+                              <span class="fa fa-navicon"></span>
+                            </button>
+                          </td>
                           <tr>
                           </tr>
                           <div><td></td></div>

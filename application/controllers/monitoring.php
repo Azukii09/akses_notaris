@@ -37,9 +37,10 @@ class Monitoring extends CI_Controller {
 		$this->data['title_lg']            = $this->config->item('title_lg');
 		$this->data['menu'] 							 = $this->menu_u->tampil_menu();
 		$this->data['script']							 = NULL;
-		$this->data['data_req']		=	$this->order_model->tampil_data_order_req('*','request');
-		$this->data['data_agunan']		=	$this->order_model->tampil_data_detail('*');
-		$this->data['joinorder']		=	$this->order_model->tampil_data_order('*');
+		$this->data['link']							 	 = NULL;
+		$this->data['data_req']						 =	$this->order_model->tampil_data_order_req('*','request');
+		$this->data['data_agunan']				 =	$this->order_model->tampil_data_detail('*');
+		$this->data['joinorder']					 =	$this->order_model->tampil_data_order('*');
 
 		$this->template->coba_render('bank/monitoring/monitoring', $this->data);
 

@@ -36,7 +36,8 @@ class Dashboard extends CI_Controller {
 		$this->data['title']               = $this->config->item('title');
 		$this->data['title_lg']            = $this->config->item('title_lg');
 		$this->data['menu'] 							 = $this->menu_u->tampil_menu();
-
+		$this->data['script']							 = NULL;
+		$this->data['link']							 	 = NULL;
 		$this->template->coba_render('bank/dashboard/dashboard', $this->data);
 
 	}

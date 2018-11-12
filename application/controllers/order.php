@@ -28,6 +28,7 @@ class Order extends CI_Controller {
 		$this->data['menu'] 							 = $this->menu_u->tampil_menu();
 		$this->data['user_login']  				 = $this->prefs_model->user_info_login($this->ion_auth->users()->row()->id);
 		$this->data['script']							 = 'bank/order/order_script';
+		$this->data['link']							 	 = 'bank/order/link';
 		$this->data['data_req']						 =	$this->order_model->tampil_data_order_req('*','request');
 		$this->data['joinorder']					 =	$this->order_model->tampil_data_order('*');
 

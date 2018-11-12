@@ -38,7 +38,8 @@ class Report extends CI_Controller {
 		$this->data['title_lg']            = $this->config->item('title_lg');
 		$this->data['menu'] 							 = $this->menu_u->tampil_menu();
 		$this->data['uri_sub']						 = 'ordercomplete';
-
+		$this->data['script']							 = NULL;
+		$this->data['link']							 	 = NULL;
 		$this->template->coba_render('bank/report/Ordercomplete', $this->data);
 
 	}

@@ -22,11 +22,11 @@ $lang['error_csrf'] = 'This form post did not pass our security checks.';
 
 // Login
 $lang['login_heading']         = 'Login';
-$lang['login_subheading']      = 'Please login with your email/username and password below.';
-$lang['login_identity_label']  = 'Email/Username:';
+$lang['login_subheading']      = 'Silahkan masukan username dan password.';
+$lang['login_identity_label']  = 'Username:';
 $lang['login_password_label']  = 'Password:';
 $lang['login_remember_label']  = 'Remember Me:';
-$lang['login_submit_btn']      = 'Login';
+$lang['login_submit_btn']      = 'Masuk';
 $lang['login_forgot_password'] = 'Forgot your password?';
 
 // Index
@@ -143,3 +143,17 @@ $lang['reset_password_new_password_confirm_label']            = 'Confirm New Pas
 $lang['reset_password_submit_btn']                            = 'Change';
 $lang['reset_password_validation_new_password_label']         = 'New Password';
 $lang['reset_password_validation_new_password_confirm_label'] = 'Confirm New Password';
+
+
+$lang['auth_sign_session']    = 'Sign in to start your session';
+$lang['auth_sign_facebook']   = 'Sign in using Facebook';
+$lang['auth_sign_google']     = 'Sign in using Google+';
+$lang['auth_your_email']      = 'Masukkan username';
+$lang['auth_your_password']   = 'Masukkan password';
+$lang['auth_remember_me']     = 'Ingat Saya';
+$lang['auth_forgot_password'] = 'Lupa Password';
+$lang['auth_new_bank_member'] = 'Daftar Sebagai Rekanan';
+$lang['auth_new_notary_member'] = 'Daftar Sebagai Notaris';
+$lang['auth_login']           = 'Masuk';
+$lang['auth_or']              = 'OR';
+$lang['error_csrf']           = 'This form post did not pass our security checks.';
